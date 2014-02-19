@@ -1,0 +1,58 @@
+// Mixins
+.button(@color; @background; @hover-backgound) {
+	color: @color;
+	background-color: @background;
+
+	&:hover, &:focus {
+		color: @color;
+		background-color: @hover-backgound;
+	}
+
+	&[disabled] {
+		&:hover, &:focus {
+			background-color: @background;
+		}
+	}
+}
+
+.transform(@string) {
+	-webkit-transform: @string;
+	transform: 		   @string;
+}
+
+.transition(@string) {
+	-webkit-transition: @string;
+	transition: 		@string;
+}
+
+.transition-transform(@string) {
+	-webkit-transition: -webkit-transform @string;
+	transition: 		transform @string;
+}
+
+// The button
+.glutton {
+	position: relative; // To be able to positon elements inside the button
+
+	border: none;
+	font-size: @glutton-font-size;
+	font-weight: @glutton-font-weight;
+	line-height: @glutton-line-height;
+	border-radius: @glutton-border-radius;
+
+	padding: 10px 15px;
+
+	-webkit-font-smoothing: subpixel-antialiased;
+	cursor: pointer;
+
+	&:hover, &:focus {
+		outline: none;
+	}
+
+	&[disabled] { cursor: default; }
+
+	.button(@glutton-color, @glutton-background-color, @glutton-hover-background-color);
+}
+
+// Import all different kinds of fills
+@import "fill-horizontal";

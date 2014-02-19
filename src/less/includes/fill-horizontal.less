@@ -1,0 +1,19 @@
+.glutton.fill-horizontal {
+	overflow: hidden;
+}
+
+.glutton.fill-horizontal .content {
+	position: relative; z-index: 11;
+}
+
+.glutton.fill-horizontal .progress {
+	display: block;
+
+	position: absolute;
+	top: 0; left: 0; z-index: 10;
+	width: 0%; height: 100%;
+
+	background-color: @glutton-progress-background-color;
+
+	.transition(~"width 0.3s");
+}
