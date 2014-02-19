@@ -1,0 +1,48 @@
+.glutton {
+  position: relative;
+  border: none;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1;
+  border-radius: 3px;
+  padding: 10px 15px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #e67e22;
+}
+.glutton:hover,
+.glutton:focus {
+  outline: none;
+}
+.glutton[disabled] {
+  cursor: default;
+}
+.glutton:hover,
+.glutton:focus {
+  color: #ffffff;
+  background-color: #d35400;
+}
+.glutton[disabled]:hover,
+.glutton[disabled]:focus {
+  background-color: #e67e22;
+}
+.glutton.fill-horizontal {
+  overflow: hidden;
+}
+.glutton.fill-horizontal .content {
+  position: relative;
+  z-index: 11;
+}
+.glutton.fill-horizontal .progress {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 0%;
+  height: 100%;
+  background-color: #d35400;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+}
